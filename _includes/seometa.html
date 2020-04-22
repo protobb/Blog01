@@ -1,0 +1,30 @@
+{%capture right_descrption %}
+  {% if page.description %}
+  {{ page.description }}
+  {% else %}
+  {% if page.layout=='post' %}
+  {{page.content | strip_html | strip_newlines  | slice: 0,72 | append:'...'}}
+  {% else %}{{ site.description }}
+  {% endif %}
+  {% endif %}
+{%endcapture%}
+{%capture right_title %}
+{% if page.title == "Home" %}
+{{ site.title }}
+{% else %}
+{{ page.title }} | {{ site.title }}
+{% endif %}
+{%endcapture%}
+  <title>{{right_title | strip}}</title>
+  <meta name="description" content="{{right_descrption | strip }}"/>
+  <!-- facebook -->
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{right_title | strip}}">
+  <meta property="og:description" content="{{right_descrption | strip }}" >
+  <meta property="og:type" content="article" />
+  <meta property="fb:app_id" content="{{site.fb_id}}">
+  <meta property="og:image" content="{{site.url}}{%if page.image%}{{page.image}}{%else%}/public/res/ogimg.jpg{%endif%}" >
+  <!-- twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{right_title | strip}}">
+  <meta name="twitter:description" content="{{right_descrption | strip }}">

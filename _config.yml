@@ -1,0 +1,32 @@
+#Basic Setting
+title: Intertidal
+email: janelin612@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  潮間帶工作室
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: https://janelin612.github.io # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  janelin612
+excerpt_separator:  '<!-- more -->'
+
+sass:
+    sass_dir: _sass
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+#Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+
+#Plugins settings
+paginate: 3
+feed:
+  path: atom.xml
+  excerpt_only: true
+
+#Other vars
+ga_id: UA-38227412-4
+fb_id: 586617358361449
